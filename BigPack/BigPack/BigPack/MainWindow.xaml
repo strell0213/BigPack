@@ -1,0 +1,47 @@
+﻿<Window x:Class="BigPack.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BigPack"
+        mc:Ignorable="d"
+        Title="BigPack" Height="450" Width="800" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/Большая пачка.ico" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="800" Height="434">
+        <Grid Background="#FFFFC1C1" HorizontalAlignment="Left" Width="92"/>
+        <Image Margin="21,17,0,0" Source="/Большая пачка.png" Stretch="Fill" Width="47" Height="47" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="6,67,0,0" TextWrapping="Wrap" Text="Большая пачка" VerticalAlignment="Top" FontFamily="Verdana" FontSize="10" Width="80" Height="12"/>
+        <ListBox x:Name="MainList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,70,10,0" Width="676" Height="356.4" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+        <Image Margin="764,43,23,377" Source="/downimage.png" Stretch="Fill"/>
+        <Button Content=" Сортировка" HorizontalAlignment="Right" Margin="0,37,11,0" VerticalAlignment="Top" Width="120" Height="27" HorizontalContentAlignment="Left" FontFamily="Verdana" VerticalContentAlignment="Center" BorderBrush="Black" Background="{x:Null}" Click="Button_Click" ClickMode="Release">
+        </Button>
+        <TextBox x:Name="SearchText" HorizontalAlignment="Right" Margin="0,37,198,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="488" Height="27" BorderBrush="#FF060606" VerticalContentAlignment="Center" FontFamily="Verdana"/>
+        <Image Margin="628,0,0,376" Source="/loopa.png" Stretch="Fill" Height="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="14"/>
+        <Button x:Name="SearchButton" Content="" HorizontalAlignment="Right" Margin="0,37,136,0" VerticalAlignment="Top" Height="27" Width="57" BorderBrush="Black" Background="{x:Null}" Click="SearchButton_Click"/>
+        <Grid x:Name="Sortgrid" Height="60" Width="120" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,61,11,0" Visibility="Hidden">
+            <Polygon Fill="White" StrokeThickness="1" Points="0,10,0,60,120,60,120,10,110,5,100,10,10,10" Stroke="Black" ></Polygon>
+            <StackPanel Orientation="Vertical">
+                <Button x:Name="DownToUpCost" Content="По возрастанию цены" Background="{x:Null}" FontSize="9" Width="120" Height="25" Margin="0,10,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Click="DownToUpCost_Click">
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="Black" Opacity="0"/>
+                    </Button.BorderBrush>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <Button Content="По убыванию цены" Background="{x:Null}" FontSize="9" Width="120" Height="25" Margin="0,35,0,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="Black" Opacity="0"/>
+                    </Button.BorderBrush>
+                </Button>
+            </StackPanel>
+
+        </Grid>
+        <Button x:Name="AddButton" Content="Добавить" HorizontalAlignment="Left" Margin="0,132,0,0" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.511,0.828" Height="32" Background="#FFD32B39" BorderBrush="Black" Foreground="White" FontFamily="Verdana" FontSize="10" Click="AddButton_Click"/>
+        <Button x:Name="EditButton" Content="Редактировать" HorizontalAlignment="Left" Margin="0,164,0,0" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.511,0.828" Height="32" Background="#FFD32B39" BorderBrush="Black" Foreground="White" FontFamily="Verdana" FontSize="10" Click="EditButton_Click"/>
+        <Button x:Name="DeleteButton" Content="Удалить" HorizontalAlignment="Left" Margin="0,196,0,0" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.511,0.828" Height="32" Background="#FFD32B39" BorderBrush="Black" Foreground="White" FontFamily="Verdana" FontSize="10" Click="DeleteButton_Click"/>
+        <Button x:Name="MaterialButton" Content="Материалы" HorizontalAlignment="Left" Margin="114,12,0,0" VerticalAlignment="Top" Width="150" Height="22" Background="{x:Null}" BorderBrush="Black" FontFamily="Verdana" Click="MaterialButton_Click"/>
+        <Button x:Name="SupplierButton" Content="Поставщики" HorizontalAlignment="Left" Margin="283,12,0,0" VerticalAlignment="Top" Width="150" Height="22" Background="{x:Null}" BorderBrush="Black" FontFamily="Verdana"/>
+        <Button x:Name="ProductButton" Content="Продукты" HorizontalAlignment="Left" Margin="452,12,0,0" VerticalAlignment="Top" Width="150" Height="22" Background="{x:Null}" BorderBrush="Black" FontFamily="Verdana"/>
+
+
+    </Grid>
+</Window>
